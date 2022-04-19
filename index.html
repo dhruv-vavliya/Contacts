@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- font awesome icons -->
+    <script src="https://kit.fontawesome.com/f6469647cd.js" crossorigin="anonymous"></script>
+
+    <!-- cascading style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- favicon icon -->
+    <!-- <link rel="icon" href="./favicon2.svg" sizes="any" type="image/svg+xml"> -->
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+
+    <!-- script files -->
+    <script type="module" src="./scripts/App.js"></script>
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <img src="./images/favicon.png" id="logo">
+            <a class="navbar-brand">Contacts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="home_btn">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="about_btn">About</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        id="navSearchBar">
+                    <button class="btn btn-outline-primary" id="navSearchBtn">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div id="home_page">
+
+            <!-- Make a Call -->
+            <h2 class="pt-3">Make a Call</h2>
+            <hr>
+            <input type="text" class="form-control" id="searchbar" placeholder="Search by name"
+                aria-describedby="basic-addon1" autocomplete="off">
+            <button type="button" id="clearNumber" class="btn btn-warning">Cancel</button>
+
+            <!-- all autocomples will fill here -->
+            <div id="autocompletes">
+            </div><br>
+
+
+            <!-- Tab Switching -->
+            <h2 class="pt-3">Add a Call</h2>
+            <hr>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        type="button" role="tab" aria-controls="nav-home" aria-selected="true"><b>Add a
+                            Contact</b></button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><b>Remove a
+                            Contact</b></button>
+                </div>
+            </nav>
+
+            <div class="tab-content" id="nav-tabContent">
+
+                <!-- Add to Contacts -->
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <br>
+                    <input type="text" class="form-control" id="namebar" placeholder="Contact Name"
+                        aria-describedby="basic-addon1"><br>
+                    <input type="text" class="form-control" id="numberbar" placeholder="Contact Number"
+                        aria-describedby="basic-addon1" autocomplete="chrome-off"><br>
+                    <button type="button" id="addNumber" class="btn btn-success"><i class="fas fa-plus"></i> Add
+                        Number</button>
+                </div>
+
+                <!-- Remove from Contacts -->
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <br>
+                    <input type="text" class="form-control" id="removebar" placeholder="Contact Name"
+                        aria-describedby="basic-addon1"><br>
+                    <button type="button" id="removeNumber" class="btn btn-danger"><i class="fas fa-minus"></i> Remove
+                        Number</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="about_page">
+            <br>
+            <h1>Algorithm Analysis</h1>
+            <hr>
+            <div id="algo">
+                <strong>
+                    <pre>
+                <h3>Data-Structure : Trie</h3><br><h5>Parameters :</h5>
+        Number of Contacts     : n
+        Average name's length  : s 
+        Contact Number's size  : p (generally, takes 8 Bytes)
+        Count Attribute's size : c (generally, takes 8 Bytes)
+                <h5>Space Complexity Analysis :</h5>
+        O(n*(s + p + c))
+                <h5>Time Complexity Analysis :</h5>
+        Add a Contact           : O(s)
+        Delete a Contact        : O(s)
+        Check Contact existance : O(s)
+        Search a Contact        : O(s*(result set size)) 
+                                : Depth First Search(DFS) on prefix match.
+        
+note : All the Complexities are based on "Average Case Scenario".
+                </pre>
+                </strong>
+            </div>
+        </div>
+
+
+        <!-- toast notification for invalid input. -->
+        <div class="position-fixed bottom-0 end-0 p-3">
+            <div id="toast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body" id="msg">
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class='footer'>
+            &copy; 2019-23 Copyright: <a href="./index.html">Contacts.com</a>
+            By Dhruv_Vavliya
+        </div>
+
+    </div>
+</body>
+
+</html>

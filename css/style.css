@@ -1,0 +1,141 @@
+#about_page {
+    display: none;
+}
+
+a, button:hover {
+    cursor: pointer;
+}
+
+#logo {
+    color: white;
+    height: 28px;
+    width: 27px;
+    margin-right: 8px;
+}
+
+#searchbar {
+    margin-left: 15%;
+    margin-top: 2px;
+    width: 60%;
+    display: inline-block;
+    background-color: whitesmoke;
+}
+
+#namebar, #numberbar, #removebar {
+    width: 70%;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+#clearNumber {
+    margin-left: 3%;
+    margin-bottom: 4px;
+}
+
+#addNumber, #removeNumber {
+    display: block;
+    margin: auto;
+}
+
+.container {
+    position: relative;
+}
+
+#autocompletes {
+    display: none;
+    position: absolute;
+    border-radius: 4px;
+    background-color: #e1f9f1;
+    margin-top: 2px;
+    margin-left: 14.7%;
+    width: 58.7%;
+    max-height: 240px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: scroll;
+    z-index: 1 !important;
+}
+
+.contact {
+    padding: 5px;
+    width: 100%;
+}
+
+.contact :hover {
+    background-color: #caeadf;
+}
+
+.person {
+    float: left;
+    margin: 7px;
+    height: 40px;
+    width: 40px;
+}
+
+span {
+    display: block;
+}
+
+.details {
+    border-radius: 5px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.divider {
+    margin: 5px;
+    margin-left: 60px;
+}
+
+.footer {
+    background-color: #b3ecff;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'sans-serif';
+    font-weight: 300;
+    text-align: center;
+}
+
+#algo {
+    background-color: #d3d7d8;
+    padding-top: 15px;
+    font-weight: 500;
+    padding-left: 50px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #656768;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #searchbar {
+        margin-left: 7%;
+    }
+
+    #autocompletes {
+        margin-left: 6%;
+        width: 57%;
+    }
+}
